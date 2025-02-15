@@ -1,0 +1,460 @@
+html,
+body {
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  display: block;
+}
+.container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-flow: column wrap;
+  background-color: #f1f8fd;
+} 
+.container .section {
+  display: flex;
+  width:100%;
+  position: relative;
+  
+}
+
+/*****************************Home Style*****************************/
+.container .section .right-half {
+  margin-left: 61px;
+  margin-top: 28px;
+}
+.container .section .left-half {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  width: 710px;
+}
+.container .section .Slogo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #c70039;
+  color: #f6c667;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  font-size:3rem;
+  font-family: "Inconsolata", monospace;
+  top: 23px;
+  left: 150px;
+  position: absolute;
+}
+.container .section .nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 492px;
+  height: 40px;
+  gap:8px;
+
+}
+.container .section .nav .nav-link {
+  display: flex;
+  padding: 8px 0px;
+  gap:8px;
+  font-size: 16px;
+  line-height:1.495;
+  text-decoration: none;
+  color: #2a2a2a;
+  width:92px;
+  height:40px;
+  justify-content: center;
+  align-items: center;
+  font-family: "Kanit", sans-serif;
+}
+.container .section .nav .nav-link:hover {
+  color: #c70039;
+  border-bottom: 3px solid #c70039;
+}
+
+.container .section .small {
+  width: 257px;
+  height: 582px;
+  margin-top: 173px;
+  background: #f6c667;
+}
+.container .section .big {
+  width: 480px;
+  height: 684px;
+  background: #f6c667;
+}
+.container .section .elipse {
+  width: 336px;
+  height: 336px;
+  margin-top: 106px;
+  margin-left: 81px;
+  background: #f1f8fd;
+  border-radius: 50%;
+}
+.container .section .my-img {
+  width: 391px;
+  height: 558px;
+  margin-top:20px;
+  margin-left:-20px;    
+}
+.container .section .identity {
+  width: 468px;
+  display: flex;
+  height:248px;
+  margin-top: 160px;
+  gap: 40px;
+  flex-flow: column nowrap;
+}
+
+.container .section .identity .myname {
+  width:468px;
+  height: 96px;
+  font-family: "Kanit", sans-serif;
+  font-size: 72px;
+  font-weight: 500;
+  line-height: 1.33;
+  color: #2a2a2a;
+}
+.container .section .identity .role {
+  width:326px;
+  height: 48px;
+  font-family: "Kanit", sans-serif;
+  font-size: 36px;
+  font-weight: 400;
+  line-height: 1.33;
+  text-align: left;
+  color: #2a2a2a;
+}
+.container .section .identity .check-work {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width:249px;
+  height:64px;
+  padding: 12px 0;  
+  gap: 10px;
+  font-family: "Kanit", sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.33;
+  color: #ffffff;
+  background-color: #c70039;
+  text-decoration: none;
+}
+.container .section .identity .check-work a{
+  text-decoration: none;
+  color:white
+}
+.container .section .identity .check-work:hover a{
+  color: #c70039;
+}
+.container .section .identity .check-work:hover{
+  background: #ffffff;
+  border: 3px solid #c70039;
+}
+.container .section .empty {
+  width: 412px;
+  height: 360px;
+  margin-top: 137px;
+  margin-left: 253px;
+  border-width: 4px 0 4px 4px;
+  border-style: solid;
+  border-color: #f6c667;
+}
+.container .section .full {
+  width: 210px;
+  height: 376px;
+  margin-top: 77px;
+  margin-left:202px;
+  background-color: #f6c667;
+}
+
+/********************Portfolio Style************************/
+.container .section .work-header {
+  width: 430px;
+  height: 305px;
+  justify-content: center;
+  align-items: center;
+  background-color: #f6c667;
+  display: flex;
+}
+.container .section .work-header h1 {
+  font-family: "Kanit", sans-serif;
+  font-size: 36px;
+  font-weight: 500;
+  line-height: 48px;
+  text-align: left;
+  color: #c70039;
+}
+.container .section .work-studio {
+  margin-top: 230px;
+  margin-left: -300px;
+  width: 1150px;
+  height: 364px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 10px;
+}
+.container .section .work-studio .work-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column wrap;
+  width: 376px;
+  height: 364px;
+  border: 2px solid #f6c667;
+  background-color: white;
+  perspective: 1000px;
+}
+.container .section .work-studio .work-item .inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+.work-item:hover .inner {
+  transform: rotateY(180deg);
+}
+.front,
+.back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+.container .section .work-studio .work-img {
+  width: 372px;
+  height: 280px;
+}
+.container .section .work-studio .work-item .work-item-name {
+  width: 376px;
+  height: 84px;
+  gap: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Kanit", sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 32px;
+  text-align: left;
+}
+.back {
+  background-color: white;
+  color: #c70039;
+  transform: rotateY(180deg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column wrap;
+  gap: 30px;
+}
+.back a {
+  text-decoration: none;
+  color: #c70039;
+  font-size: 24px;
+  font-family: "Kanit", sans-serif;
+}
+
+/*****Skills Section Style ******/
+#Skills{
+ margin-top:200px;
+}
+.section .skills-header {
+  height: fit-content;
+  width: 278px;
+  height: 273px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.section .skills-header h1 {
+  display: flex;
+  font-family: "Kanit", sans-serif;
+  font-size: 36px;
+  font-weight: 500;
+  line-height: 48px;
+  text-align: left;
+  color: #c70039;
+}
+.section .skills-container {
+  width: 1162px;
+  height: 273px;
+  background-color: #f6c667;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-flow: row wrap;
+  gap: 20px;
+}
+.section .skills-container .skill-img {
+  margin: 0 auto;
+}
+
+/*****About Section Style ******/
+#About{
+  margin-top:200px;
+}
+.container .section .left{
+  display: flex;
+  flex-flow: column wrap;
+  z-index: 1;
+  width: fit-content;
+}
+.container .section .right{
+  z-index: 2;
+  display:flex;
+  width: fit-content;
+}
+.container .section .left .about-header {
+  width: 523px;
+  height: 304px;
+  background-color: #f6c667;
+}
+.container .section .left .about-header h1 {
+  margin-top: 85px;
+  margin-left: 135px;
+  font-family: "Kanit", sans-serif;
+  font-size: 36px;
+  font-weight: 500;
+  line-height: 48px;
+  text-align: left;
+  color: #c70039;
+}
+.container .section .left .border-rectangle {
+  width: 391px;
+  height: 407px;
+  margin-top: -103px;
+  margin-left: 130px;
+  border-bottom: 2px solid #f6c667;
+  border-left: 2px solid #f6c667;
+  z-index: 1;
+}
+.container .section .right .about-img {
+  width: 1030px;
+  height: 687px;
+  margin-top: 61px;
+  margin-left:-113px;
+  z-index: 2;
+}
+
+.container .section .right .vague-rectangle {
+  margin-top: 208px;
+  margin-left:-1280px;
+  width: 689px;
+  height: 336px;
+  gap: 10px;
+  backdrop-filter: blur(10px);
+  background: #ffffff8f;
+  z-index: 3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container .section .right .vague-rectangle .text {
+  font-family: "Kanit", sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 32px;
+  text-align: left;
+  color: #2a2a2a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding:56px 72px;
+}
+/****Contact me Section***/
+.container .footer {
+  margin-top: 200px;
+  display: inline-flex;
+  width: 1440px;
+  height: 524px;
+  gap: 56px;
+  flex-flow: column wrap;
+  align-items: center;
+}
+.container .footer .mystatus {
+  width: 316px;
+  height: 80px;
+  gap: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.container .footer .Slogo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #c70039;
+  color: #f6c667;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  font-size: 48px;
+  font-family: "Inconsolata", monospace;
+}
+.container .footer .info .myname {
+  font-family: "Kanit", sans-serif;
+  font-size: 36px;
+  font-weight: 400;
+  line-height: 48px;
+  text-align: left;
+  color: #2a2a2a;
+}
+.container .footer .info .role {
+  font-family: "Kanit", sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 32px;
+  text-align: left;
+  color: #2a2a2a;
+}
+.container .footer .contact-info {
+  width: 1440px;
+  height: 388px;
+  gap: 72px;
+  background-color: #f6c667;
+  display: inline-flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-flow: column wrap;
+}
+
+.container .footer .contact-info .intro {
+  font-family: "Kanit", sans-serif;
+  font-size: 36px;
+  font-weight: 500;
+  line-height: 48px;
+  text-align: left;
+  color: #c70039;
+  margin-top: 56px;
+}
+.container .footer .contact-info .details {
+  width: 1180px;
+  height: 108px;
+  gap: 20px;
+  background-color: #f6c667;
+  display: flex;
+  flex-flow: row wrap;
+}
+.container .footer .contact-info .details .detail-item {
+  font-family: "Kanit", sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 32px;
+  text-align: left;
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  text-decoration: none;
+  color: #2a2a2a;
+}
