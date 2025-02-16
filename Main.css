@@ -13,12 +13,11 @@ body {
   align-items: flex-start;
   flex-flow: column wrap;
   background-color: #f1f8fd;
-} 
+}
 .container .section {
   display: flex;
-  width:100%;
+  width: 100%;
   position: relative;
-  
 }
 
 /*****************************Home Style*****************************/
@@ -41,7 +40,7 @@ body {
   width: 64px;
   height: 64px;
   border-radius: 50%;
-  font-size:3rem;
+  font-size: 3rem;
   font-family: "Inconsolata", monospace;
   top: 23px;
   left: 150px;
@@ -53,19 +52,18 @@ body {
   align-items: center;
   width: 492px;
   height: 40px;
-  gap:8px;
-
+  gap: 8px;
 }
 .container .section .nav .nav-link {
   display: flex;
   padding: 8px 0px;
-  gap:8px;
+  gap: 8px;
   font-size: 16px;
-  line-height:1.495;
+  line-height: 1.495;
   text-decoration: none;
   color: #2a2a2a;
-  width:92px;
-  height:40px;
+  width: 92px;
+  height: 40px;
   justify-content: center;
   align-items: center;
   font-family: "Kanit", sans-serif;
@@ -97,20 +95,20 @@ body {
 .container .section .my-img {
   width: 391px;
   height: 558px;
-  margin-top:20px;
-  margin-left:-20px;    
+  margin-top: 20px;
+  margin-left: -20px;
 }
 .container .section .identity {
   width: 468px;
   display: flex;
-  height:248px;
+  height: 248px;
   margin-top: 160px;
   gap: 40px;
   flex-flow: column nowrap;
 }
 
 .container .section .identity .myname {
-  width:468px;
+  width: 468px;
   height: 96px;
   font-family: "Kanit", sans-serif;
   font-size: 72px;
@@ -119,7 +117,7 @@ body {
   color: #2a2a2a;
 }
 .container .section .identity .role {
-  width:326px;
+  width: 326px;
   height: 48px;
   font-family: "Kanit", sans-serif;
   font-size: 36px;
@@ -132,9 +130,9 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  width:249px;
-  height:64px;
-  padding: 12px 0;  
+  width: 249px;
+  height: 64px;
+  padding: 12px 0;
   gap: 10px;
   font-family: "Kanit", sans-serif;
   font-size: 24px;
@@ -144,14 +142,14 @@ body {
   background-color: #c70039;
   text-decoration: none;
 }
-.container .section .identity .check-work a{
+.container .section .identity .check-work a {
   text-decoration: none;
-  color:white
+  color: white;
 }
-.container .section .identity .check-work:hover a{
+.container .section .identity .check-work:hover a {
   color: #c70039;
 }
-.container .section .identity .check-work:hover{
+.container .section .identity .check-work:hover {
   background: #ffffff;
   border: 3px solid #c70039;
 }
@@ -168,11 +166,12 @@ body {
   width: 210px;
   height: 376px;
   margin-top: 77px;
-  margin-left:202px;
+  margin-left: 202px;
   background-color: #f6c667;
 }
 
-/********************Portfolio Style************************/
+/********************Portfolio Style*************************/
+
 .container .section .work-header {
   width: 430px;
   height: 305px;
@@ -181,6 +180,7 @@ body {
   background-color: #f6c667;
   display: flex;
 }
+
 .container .section .work-header h1 {
   font-family: "Kanit", sans-serif;
   font-size: 36px;
@@ -189,6 +189,7 @@ body {
   text-align: left;
   color: #c70039;
 }
+
 .container .section .work-studio {
   margin-top: 230px;
   margin-left: -300px;
@@ -199,41 +200,59 @@ body {
   align-items: center;
   column-gap: 10px;
 }
+
 .container .section .work-studio .work-item {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-flow: column wrap;
   width: 376px;
   height: 364px;
-  border: 2px solid #f6c667;
-  background-color: white;
   perspective: 1000px;
 }
+
 .container .section .work-studio .work-item .inner {
   position: relative;
   width: 100%;
   height: 100%;
   text-align: center;
-  transition: transform 0.6s;
+  transition: transform 0.8s ease;
   transform-style: preserve-3d;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
+
+.work-item .inner {
+  transition: transform 0.8s ease 0.2s;
+}
+
 .work-item:hover .inner {
   transform: rotateY(180deg);
 }
+
 .front,
 .back {
   position: absolute;
   width: 100%;
   height: 100%;
-  -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border: 2px solid #f6c667;
+  background-color: white;
 }
+
+.front {
+  transform: rotateY(0deg);
+}
+
+.back {
+  transform: rotateY(180deg);
+  background-color: #f6c667;
+}
+
 .container .section .work-studio .work-img {
   width: 372px;
   height: 280px;
 }
+
 .container .section .work-studio .work-item .work-item-name {
   width: 376px;
   height: 84px;
@@ -247,26 +266,22 @@ body {
   line-height: 32px;
   text-align: left;
 }
-.back {
-  background-color: white;
-  color: #c70039;
-  transform: rotateY(180deg);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-flow: column wrap;
-  gap: 30px;
-}
+
 .back a {
   text-decoration: none;
   color: #c70039;
   font-size: 24px;
   font-family: "Kanit", sans-serif;
+  margin: 10px 0;
+}
+
+.back a:hover {
+  text-decoration: underline;
 }
 
 /*****Skills Section Style ******/
-#Skills{
- margin-top:200px;
+#Skills {
+  margin-top: 200px;
 }
 .section .skills-header {
   height: fit-content;
@@ -301,18 +316,18 @@ body {
 }
 
 /*****About Section Style ******/
-#About{
-  margin-top:200px;
+#About {
+  margin-top: 200px;
 }
-.container .section .left{
+.container .section .left {
   display: flex;
   flex-flow: column wrap;
   z-index: 1;
   width: fit-content;
 }
-.container .section .right{
+.container .section .right {
   z-index: 2;
-  display:flex;
+  display: flex;
   width: fit-content;
 }
 .container .section .left .about-header {
@@ -343,13 +358,13 @@ body {
   width: 1030px;
   height: 687px;
   margin-top: 61px;
-  margin-left:-113px;
+  margin-left: -113px;
   z-index: 2;
 }
 
 .container .section .right .vague-rectangle {
   margin-top: 208px;
-  margin-left:-1280px;
+  margin-left: -1280px;
   width: 689px;
   height: 336px;
   gap: 10px;
@@ -370,7 +385,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding:56px 72px;
+  padding: 56px 72px;
 }
 /****Contact me Section***/
 .container .footer {
