@@ -17,7 +17,6 @@ body {
 .container .section {
   display: flex;
   width: 100%;
-  position: relative;
 }
 
 /*****************************Home Style*****************************/
@@ -31,10 +30,18 @@ body {
   align-items: flex-start;
   width: 710px;
 }
+.container .section .left-quarter {
+  display: flex;
+  height:755px;
+  width:257px;
+  flex-flow: column wrap;
+  z-index: 1;
+}
 .container .section .Slogo {
   display: flex;
   align-items: center;
   justify-content: center;
+  align-self: flex-end;
   background-color: #c70039;
   color: #f6c667;
   width: 64px;
@@ -42,9 +49,8 @@ body {
   border-radius: 50%;
   font-size: 3rem;
   font-family: "Inconsolata", monospace;
-  top: 23px;
-  left: 150px;
-  position: absolute;
+  margin-top: 16px;
+  margin-right:36px;
 }
 .container .section .nav {
   display: flex;
@@ -74,15 +80,17 @@ body {
 }
 
 .container .section .small {
+  display:flex;
   width: 257px;
   height: 582px;
-  margin-top: 173px;
+  margin-top: 93px;
   background: #f6c667;
 }
 .container .section .big {
   width: 480px;
   height: 684px;
   background: #f6c667;
+  z-index: 2;
 }
 .container .section .elipse {
   width: 336px;
