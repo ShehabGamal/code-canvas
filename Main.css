@@ -6,6 +6,7 @@ body {
   padding: 0;
   margin: 0;
   display: block;
+  overflow-x: hidden;
 }
 .container {
   display: flex;
@@ -13,12 +14,14 @@ body {
   align-items: flex-start;
   flex-flow: column wrap;
   background-color: #f1f8fd;
+  animation: fadeIn 1s ease-in-out;
 }
 .container .section {
-  display: flex;
-  width: 100%;
+  display: inline-flex;
+  width: 1440px;
+  flex-wrap: wrap;
+  animation: slideInLeft 1s ease-in-out;
 }
-
 /*****************************Home Style*****************************/
 .container .section .right-half {
   margin-left: 61px;
@@ -32,8 +35,8 @@ body {
 }
 .container .section .left-quarter {
   display: flex;
-  height:755px;
-  width:257px;
+  height: 755px;
+  width: 257px;
   flex-flow: column wrap;
   z-index: 1;
 }
@@ -50,7 +53,7 @@ body {
   font-size: 3rem;
   font-family: "Inconsolata", monospace;
   margin-top: 16px;
-  margin-right:36px;
+  margin-right: 36px;
 }
 .container .section .nav {
   display: flex;
@@ -80,7 +83,7 @@ body {
 }
 
 .container .section .small {
-  display:flex;
+  display: flex;
   width: 257px;
   height: 582px;
   margin-top: 93px;
@@ -149,6 +152,7 @@ body {
   color: #ffffff;
   background-color: #c70039;
   text-decoration: none;
+  transition: background-color 0.3s ease;
 }
 .container .section .identity .check-work a {
   text-decoration: none;
@@ -202,19 +206,22 @@ body {
   margin-top: 230px;
   margin-left: -300px;
   width: 1150px;
-  height: 364px;
+  height: fit-content;
   display: flex;
   justify-content: center;
   align-items: center;
-  column-gap: 10px;
+  gap: 10px;
 }
 
 .container .section .work-studio .work-item {
   width: 376px;
   height: 364px;
   perspective: 1000px;
+  transition: box-shadow 0.3s ease;
 }
-
+.container .section .work-studio .work-item:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
 .container .section .work-studio .work-item .inner {
   position: relative;
   width: 100%;
@@ -322,6 +329,28 @@ body {
 .section .skills-container .skill-img {
   margin: 0 auto;
 }
+.section .skills-container #HTML {
+  width: 131px;
+  height: 131px;
+}
+.section .skills-container #CSS {
+  width: 100px;
+  height: 140px;
+}
+.section .skills-container #JS {
+  width: 108px;
+  height: 158px;
+}
+.section .skills-container #REACT {
+  width: 107px;
+  height: 107px;
+  border-radius: 8px;
+}
+.section .skills-container #STYLEDCOMPONENTS {
+  width: 107px;
+  height: 107px;
+  border-radius: 8px;
+}
 
 /*****About Section Style ******/
 #About {
@@ -404,6 +433,7 @@ body {
   gap: 56px;
   flex-flow: column wrap;
   align-items: center;
+  animation: slideInLeft 1s ease-in-out;
 }
 .container .footer .mystatus {
   width: 316px;
@@ -442,7 +472,7 @@ body {
   color: #2a2a2a;
 }
 .container .footer .contact-info {
-  width: 1440px;
+  width: 100%;
   height: 388px;
   gap: 72px;
   background-color: #f6c667;
@@ -480,4 +510,323 @@ body {
   align-items: center;
   text-decoration: none;
   color: #2a2a2a;
+}
+
+/** Resonsive **/
+
+@media (max-width: 800px) {
+  /** General **/
+
+  .container .section {
+    width: 100%;
+  }
+  .container #ContactMe {
+    width: 100%;
+  }
+
+  /** Home Section **/
+
+  .container .section .left-half {
+    width: 172px;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  .container .section .right-half {
+    margin: 0 0 0 0;
+    width: 188px;
+  }
+  .container .section .left-quarter {
+    flex-direction: row;
+    width: 100%;
+    height: auto;
+    justify-content: space-between;
+  }
+  .container .section .Slogo {
+    width: 32px;
+    height: 32px;
+    font-size: 1.5rem;
+    margin: 0 0 12px 16px;
+  }
+  .container .section .nav {
+    margin: 8px 0 0 0;
+    gap: 3px;
+    width: 100%;
+    height: 20px;
+  }
+  .container .section .nav .nav-link {
+    font-size: 5px;
+    width: 15%;
+    height: 20px;
+    padding: 2px 0;
+  }
+  .container .section .nav .nav-link:hover {
+    border-bottom-width: 1px;
+  }
+  .container .section .small {
+    width: 80px;
+    height: 60px;
+    margin: 0;
+  }
+  .container .section .big {
+    width: 172px;
+    height: 214px;
+  }
+  .container .section .elipse {
+    width: 99px;
+    height: 99px;
+    margin: 25px 0 0 38px;
+  }
+  .container .section .my-img {
+    width: 130px;
+    height: 188px;
+    margin: 1px 0 0 -15px;
+  }
+  .container .section .identity {
+    width: 130px;
+    height: 100px;
+    gap: 16px;
+    margin: 61px 0 0 16px;
+  }
+  .container .section .identity .myname {
+    font-size: 20px;
+    line-height: 29.9px;
+    font-weight: 500;
+    width: 130px;
+    height: 30px;
+  }
+  .container .section .identity .role {
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 20.93px;
+    width: 125px;
+    height: 21px;
+  }
+  .container .section .identity .check-work {
+    width: 113px;
+    height: 33px;
+    padding-top: 6px;
+    padding-right: 8px;
+    padding-bottom: 6px;
+    padding-left: 8px;
+    gap: 10px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20.93px;
+  }
+  .container .section .empty {
+    width: 197px;
+    height: 224px;
+    border-top-width: 2px;
+    border-bottom-width: 2px;
+    border-left-width: 2px;
+    margin: 131px 0 0 -10px;
+  }
+  .container .section .full {
+    width: 107px;
+    height: 213px;
+    margin: 24px 0 0 91px;
+  }
+
+  /** Work Section **/
+
+  .container #Work {
+    margin-top: -200px;
+  }
+  .container .section .work-header {
+    background: transparent;
+    width: 94px;
+    height: 36px;
+    margin-left: 28px;
+    margin-bottom: 20px;
+  }
+  .container .section .work-header h1 {
+    font-size: 24px;
+    line-height: 35.88px;
+  }
+  .container .section .work-studio {
+    width: 316px;
+    margin-top: 0;
+    margin-left: 22px;
+    gap: 16px;
+    flex-flow: column wrap;
+  }
+  .container .section .work-studio .work-item {
+    width: 316px;
+    height: 272px;
+    margin: 0 0 0 0;
+    gap: 16px;
+  }
+  .container .section .work-studio .work-img {
+    width: 316px;
+    height: 212px;
+  }
+  .container .section .work-studio .work-item .work-item-name {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 26.91px;
+  }
+  .back a {
+    font-size: 22px;
+  }
+
+  /** Skills **/
+
+  .container #Skills {
+    margin-top: 72px;
+  }
+  .section .skills-header {
+    width: 58px;
+    height: 36px;
+    margin-left: 36px;
+    margin-bottom: 4px;
+  }
+  .section .skills-header h1 {
+    font-size: 24px;
+    line-height: 35.88px;
+  }
+  .section .skills-container {
+    width: 360px;
+    height: fit-content;
+    padding: 30px 50px;
+    gap: 50px;
+  }
+  .section .skills-container #HTML {
+    width: 88px;
+    height: 89px;
+  }
+  .section .skills-container #CSS {
+    width: 70px;
+    height: 90px;
+  }
+  .section .skills-container #JS {
+    width: 67px;
+    height: 98px;
+  }
+  .section .skills-container #REACT {
+    width: 66px;
+    height: 66px;
+  }
+  .section .skills-container #STYLEDCOMPONENTS {
+    width: 66px;
+    height: 66px;
+  }
+
+  /*About*/
+
+  #About {
+    margin-top: 72px;
+  }
+  .container .section .right {
+    flex-direction: column;
+  }
+  .container .section .left .about-header {
+    width: 105px;
+    height: 36px;
+    background: transparent;
+    margin: 0 0 4px 36px;
+  }
+  .container .section .left .about-header h1 {
+    margin: 0;
+    font-size: 24px;
+    line-height: 35.88px;
+  }
+  .container .section .left .border-rectangle {
+    width: 360px;
+    height: 621px;
+    margin-top: -103px;
+    margin-left: 0;
+    border-bottom: 2px solid #f6c667;
+    border-left: 0;
+    z-index: 1;
+  }
+  .container .section .right .about-img {
+    width: 360px;
+    height: 213px;
+    margin-top: -521px;
+    margin-left: 0;
+    z-index: 2;
+  }
+
+  .container .section .right .vague-rectangle {
+    margin-top: -40px;
+    margin-left: 20px;
+    width: 330px;
+    height: 330px;
+  }
+  .container .section .right .vague-rectangle .text {
+    font-size: 16px;
+    line-height: 23.92px;
+    font-weight: 400;
+    padding: 16px;
+  }
+
+  /**Contact Me**/
+
+  .container .footer {
+    margin-top: 72px;
+    width: 360px;
+    height: fit-content;
+    gap: 24px;
+  }
+  .container .footer .mystatus {
+    width: 165px;
+    height: 48px;
+    gap: 8px;
+  }
+  .container .footer .Slogo {
+    width: 32px;
+    height: 32px;
+    font-size: 1.5rem;
+  }
+  .container .footer .info .myname {
+    font-size: 18px;
+    line-height: 26.91px;
+  }
+  .container .footer .info .role {
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 20.93px;
+  }
+  .container .footer .contact-info {
+    width: 360px;
+    height: fit-content;
+    padding: 8px;
+    gap: 40px;
+  }
+  .container .footer .contact-info .intro {
+    margin-top: 22px;
+    font-size: 24px;
+    line-height: 35.88px;
+  }
+  .container .footer .contact-info .details {
+    width: fit-content;
+    height: fit-content;
+    gap: 40px;
+    flex-flow: column wrap;
+  }
+  .container .footer .contact-info .details .detail-item {
+    font-size: 18px;
+    line-height: 26.91px;
+  }
+}
+
+/*Animations*/
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }
