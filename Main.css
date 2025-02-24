@@ -764,7 +764,6 @@ body {
 
   .container .footer {
     margin-top: 72px;
-    width: 360px;
     height: fit-content;
     gap: 24px;
   }
@@ -788,9 +787,9 @@ body {
     line-height: 20.93px;
   }
   .container .footer .contact-info {
-    width: 360px;
+    width: 100%;
     height: fit-content;
-    padding: 8px;
+    padding: 28px 0;
     gap: 40px;
   }
   .container .footer .contact-info .intro {
