@@ -514,7 +514,7 @@ body {
 
 /** Resonsive **/
 
-@media (max-width: 800px) {
+@media (max-width: 360px) {
   /** General **/
 
   .container .section {
