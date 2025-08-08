@@ -831,7 +831,7 @@ body {
     line-height: 100%;
   }
   .container .footer .contact-info {
-    min-height: 508px;
+    height: fit-content;
     box-sizing: border-box;
     padding: 22px 40px;
     gap: 0;
