@@ -32,6 +32,15 @@
         </div>
       </div>
       <div class="right-half">
+        <button
+          class="hamburger-btn"
+          aria-label="Toggle navigation"
+          aria-expanded="false"
+        >
+          <div class="line"></div>
+          <div class="line"></div>
+          <div class="line"></div>
+        </button>
         <div class="nav">
           <a href="#Home" class="nav-link">Home</a>
           <a href="#Work" class="nav-link">My Work</a>
@@ -133,24 +142,9 @@
         <h1>Skills</h1>
       </div>
       <div class="skills-container">
-        <img
-          src="./Assets/html5.png"
-          class="skill-img"
-          alt="html5"
-          id="HTML"    
-        />
-        <img
-          src="./Assets/css3.png"
-          class="skill-img"
-          alt="css3"
-          id="CSS"
-        />
-        <img
-          src="./Assets/js.png"
-          class="skill-img"
-          alt="JS"
-          id="JS"
-        />
+        <img src="./Assets/html5.png" class="skill-img" alt="html5" id="HTML" />
+        <img src="./Assets/css3.png" class="skill-img" alt="css3" id="CSS" />
+        <img src="./Assets/js.png" class="skill-img" alt="JS" id="JS" />
         <img
           src="./Assets/reactjs.png"
           class="skill-img"
@@ -211,6 +205,7 @@
             class="detail-item"
           >
             <svg
+              class="SVG"
               width="60"
               height="60"
               viewBox="0 0 60 60"
@@ -240,8 +235,13 @@
 
             <div class="text">Shehab Gamal | Linkedin</div>
           </a>
-          <a class="detail-item" href="https://x.com/ShehabGamal333" target="_blank">
+          <a
+            class="detail-item"
+            href="https://x.com/ShehabGamal333"
+            target="_blank"
+          >
             <svg
+              class="SVG"
               width="60"
               height="60"
               viewBox="0 0 60 60"
@@ -255,10 +255,11 @@
               />
             </svg>
 
-            <div class="text">Shehab Gamal | twitter</div>
+            <div class="text">Shehab Gamal | Twitter</div>
           </a>
           <div class="detail-item">
             <svg
+              class="SVG"
               width="60"
               height="60"
               viewBox="0 0 60 60"
@@ -307,6 +308,7 @@
             class="detail-item"
           >
             <svg
+              class="SVG"
               width="60"
               height="60"
               viewBox="0 0 60 60"
@@ -353,4 +355,17 @@
       </div>
     </footer>
   </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const hamburgerBtn = document.querySelector('.hamburger-btn');
+        const navPanel = document.querySelector('.nav');
+
+        hamburgerBtn.addEventListener('click', () => {
+            navPanel.classList.toggle('show');
+            
+            const isExpanded = navPanel.classList.contains('show');
+            hamburgerBtn.setAttribute('aria-expanded', isExpanded);
+        });
+    });
+</script>
 </body>

@@ -7,6 +7,7 @@ body {
   margin: 0;
   display: block;
   overflow-x: hidden;
+  background-color: #f1f8fd;
 }
 .container {
   display: flex;
@@ -15,14 +16,18 @@ body {
   flex-flow: column wrap;
   background-color: #f1f8fd;
   animation: fadeIn 1s ease-in-out;
+  width: 1440px;
+  margin: 0 auto;
 }
 .container .section {
   display: inline-flex;
-  width: 1440px;
+  width: 100%;
   flex-wrap: wrap;
   animation: slideInLeft 1s ease-in-out;
 }
+
 /*****************************Home Style*****************************/
+
 .container .section .right-half {
   margin-left: 61px;
   margin-top: 28px;
@@ -54,6 +59,23 @@ body {
   font-family: "Inconsolata", monospace;
   margin-top: 16px;
   margin-right: 36px;
+}
+
+.hamburger-btn {
+  display: none;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 5.5px;
+  z-index: 1000;
+}
+
+.hamburger-btn .line {
+  width: 21px;
+  height: 3px;
+  background-color: #c70039;
+  margin: 4px 0;
+  transition: 0.4s;
 }
 .container .section .nav {
   display: flex;
@@ -295,13 +317,12 @@ body {
 }
 
 /*****Skills Section Style ******/
+
 #Skills {
   margin-top: 200px;
 }
 .section .skills-header {
-  height: fit-content;
   width: 278px;
-  height: 273px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -328,31 +349,14 @@ body {
 }
 .section .skills-container .skill-img {
   margin: 0 auto;
-}
-.section .skills-container #HTML {
-  width: 131px;
-  height: 131px;
-}
-.section .skills-container #CSS {
-  width: 100px;
-  height: 140px;
-}
-.section .skills-container #JS {
-  width: 108px;
-  height: 158px;
-}
-.section .skills-container #REACT {
+  object-fit: contain;
   width: 107px;
   height: 107px;
-  border-radius: 8px;
-}
-.section .skills-container #STYLEDCOMPONENTS {
-  width: 107px;
-  height: 107px;
-  border-radius: 8px;
+  border-radius: 16px;
 }
 
 /*****About Section Style ******/
+
 #About {
   margin-top: 200px;
 }
@@ -368,11 +372,15 @@ body {
   width: fit-content;
 }
 .container .section .left .about-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 523px;
   height: 304px;
   background-color: #f6c667;
 }
 .container .section .left .about-header h1 {
+  display: flex;
   margin-top: 85px;
   margin-left: 135px;
   font-family: "Kanit", sans-serif;
@@ -424,12 +432,14 @@ body {
   align-items: center;
   padding: 56px 72px;
 }
+
 /****Contact me Section***/
+
 .container .footer {
   margin-top: 200px;
   display: inline-flex;
-  width: 1440px;
-  height: 524px;
+  width: 100%;
+  height: fit-content;
   gap: 56px;
   flex-flow: column wrap;
   align-items: center;
@@ -512,303 +522,6 @@ body {
   color: #2a2a2a;
 }
 
-/** Resonsive **/
-
-@media (max-width: 360px) {
-  /** General **/
-
-  .container .section {
-    width: 100%;
-  }
-  .container #ContactMe {
-    width: 100%;
-  }
-
-  /** Home Section **/
-
-  .container .section .left-half {
-    width: 47.78%;
-    flex-direction: column;
-    justify-content: flex-start;
-  }
-  .container .section .right-half {
-    margin: 0 0 0 0;
-    width: 52.22%;
-  }
-  .container .section .left-quarter {
-    flex-direction: row;
-    width: 100%;
-    height: auto;
-    justify-content: space-between;
-  }
-  .container .section .Slogo {
-    width: 32px;
-    height: 32px;
-    font-size: 1.5rem;
-    margin: 0 0 12px 16px;
-  }
-  .container .section .nav {
-    margin: 8px 0 0 0;
-    gap: 3px;
-    width: 100%;
-    height: 20px;
-  }
-  .container .section .nav .nav-link {
-    font-size: 5px;
-    width: 15%;
-    height: 20px;
-    padding: 2px 0;
-  }
-  .container .section .nav .nav-link:hover {
-    border-bottom-width: 1px;
-  }
-  .container .section .small {
-    width: 80px;
-    height: 60px;
-    margin: 0;
-  }
-  .container .section .big {
-    width: 100%;
-    height: 214px;
-  }
-  .container .section .elipse {
-    width: 99px;
-    height: 99px;
-    margin: 25px 0 0 38px;
-  }
-  .container .section .my-img {
-    width: 130px;
-    height: 188px;
-    margin: 1px 0 0 -15px;
-  }
-  .container .section .identity {
-    width: 130px;
-    height: 100px;
-    gap: 16px;
-    margin: 61px 0 0 16px;
-  }
-  .container .section .identity .myname {
-    font-size: 20px;
-    line-height: 29.9px;
-    font-weight: 500;
-    width: 130px;
-    height: 30px;
-  }
-  .container .section .identity .role {
-    font-weight: 300;
-    font-size: 14px;
-    line-height: 20.93px;
-    width: 125px;
-    height: 21px;
-  }
-  .container .section .identity .check-work {
-    width: 113px;
-    height: 33px;
-    padding-top: 6px;
-    padding-right: 8px;
-    padding-bottom: 6px;
-    padding-left: 8px;
-    gap: 10px;
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 20.93px;
-  }
-  .container .section .empty {
-    width: 197px;
-    height: 224px;
-    border-top-width: 2px;
-    border-bottom-width: 2px;
-    border-left-width: 2px;
-    margin: 131px 0 0 -10px;
-  }
-  .container .section .full {
-    width: 107px;
-    height: 213px;
-    margin: 24px 0 0 91px;
-  }
-
-  /** Work Section **/
-
-  .container #Work {
-    margin-top: -200px;
-  }
-  .container .section .work-header {
-    background: transparent;
-    width: 94px;
-    height: 36px;
-    margin-left: 28px;
-    margin-bottom: 20px;
-  }
-  .container .section .work-header h1 {
-    font-size: 24px;
-    line-height: 35.88px;
-  }
-  .container .section .work-studio {
-    width: 316px;
-    margin-top: 0;
-    margin-left:4%;
-    gap: 16px;
-    flex-flow: column wrap;
-  }
-  .container .section .work-studio .work-item {
-    width: 316px;
-    height: 272px;
-    margin: 0 0 0 0;
-    gap: 16px;
-  }
-  .container .section .work-studio .work-img {
-    width: 316px;
-    height: 212px;
-  }
-  .container .section .work-studio .work-item .work-item-name {
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 26.91px;
-  }
-  .back a {
-    font-size: 22px;
-  }
-
-  /** Skills **/
-
-  .container #Skills {
-    margin-top: 72px;
-  }
-  .section .skills-header {
-    width: 58px;
-    height: 36px;
-    margin-left: 36px;
-    margin-bottom: 4px;
-  }
-  .section .skills-header h1 {
-    font-size: 24px;
-    line-height: 35.88px;
-  }
-  .section .skills-container {
-    width: 360px;
-    height: fit-content;
-    padding: 30px 50px;
-    gap: 50px;
-  }
-  .section .skills-container #HTML {
-    width: 88px;
-    height: 89px;
-  }
-  .section .skills-container #CSS {
-    width: 70px;
-    height: 90px;
-  }
-  .section .skills-container #JS {
-    width: 67px;
-    height: 98px;
-  }
-  .section .skills-container #REACT {
-    width: 66px;
-    height: 66px;
-  }
-  .section .skills-container #STYLEDCOMPONENTS {
-    width: 66px;
-    height: 66px;
-  }
-
-  /*About*/
-
-  #About {
-    margin-top: 72px;
-  }
-  .container .section .right {
-    flex-direction: column;
-  }
-  .container .section .left .about-header {
-    width: 105px;
-    height: 36px;
-    background: transparent;
-    margin: 0 0 4px 36px;
-  }
-  .container .section .left .about-header h1 {
-    margin: 0;
-    font-size: 24px;
-    line-height: 35.88px;
-  }
-  .container .section .left .border-rectangle {
-    width: 360px;
-    height: 621px;
-    margin-top: -103px;
-    margin-left: 0;
-    border-bottom: 2px solid #f6c667;
-    border-left: 0;
-    z-index: 1;
-  }
-  .container .section .right .about-img {
-    width: 360px;
-    height: 213px;
-    margin-top: -521px;
-    margin-left: 0;
-    z-index: 2;
-  }
-
-  .container .section .right .vague-rectangle {
-    margin-top: -40px;
-    margin-left: 20px;
-    width: 330px;
-    height: 330px;
-  }
-  .container .section .right .vague-rectangle .text {
-    font-size: 16px;
-    line-height: 23.92px;
-    font-weight: 400;
-    padding: 16px;
-  }
-
-  /**Contact Me**/
-
-  .container .footer {
-    margin-top: 72px;
-    height: fit-content;
-    gap: 24px;
-  }
-  .container .footer .mystatus {
-    width: 165px;
-    height: 48px;
-    gap: 8px;
-  }
-  .container .footer .Slogo {
-    width: 32px;
-    height: 32px;
-    font-size: 1.5rem;
-  }
-  .container .footer .info .myname {
-    font-size: 18px;
-    line-height: 26.91px;
-  }
-  .container .footer .info .role {
-    font-weight: 300;
-    font-size: 14px;
-    line-height: 20.93px;
-  }
-  .container .footer .contact-info {
-    width: 100%;
-    height: fit-content;
-    padding: 28px 0;
-    gap: 40px;
-  }
-  .container .footer .contact-info .intro {
-    margin-top: 22px;
-    font-size: 24px;
-    line-height: 35.88px;
-  }
-  .container .footer .contact-info .details {
-    width: fit-content;
-    height: fit-content;
-    gap: 40px;
-    flex-flow: column wrap;
-  }
-  .container .footer .contact-info .details .detail-item {
-    font-size: 18px;
-    line-height: 26.91px;
-  }
-}
-
 /*Animations*/
 
 @keyframes fadeIn {
@@ -827,5 +540,323 @@ body {
   to {
     transform: translateX(0);
     opacity: 1;
+  }
+}
+
+@media (max-width: 480px) {
+  /*Home Section  SmallScreens*/
+
+  .container .section .right-half {
+    margin-left: 18px;
+    margin-top: 0;
+  }
+  .container .section .left-half {
+    flex-direction: column;
+    width: 172px;
+    justify-content: flex-start;
+  }
+
+  .container .section .left-quarter {
+    height: 60px;
+    width: 100%;
+    flex-flow: row wrap;
+  }
+
+  .container .section .Slogo {
+    width: 32px;
+    height: 32px;
+    font-size: 24px;
+    margin: 16px 35px 17px 16px;
+  }
+
+  .container .section .small {
+    display: flex;
+    width: 89px;
+    height: 100%;
+    margin-top: 0;
+  }
+
+  .container .section .big {
+    width: 172px;
+    height: 214px;
+  }
+
+  .container .section .elipse {
+    width: 99px;
+    height: 99px;
+    margin-top: 25px;
+    margin-left: 38px;
+  }
+  .container .section .my-img {
+    width: 130px;
+    height: 188px;
+    margin-top: 1px;
+    margin-left: -15px;
+  }
+  .container .section .hamburger-btn {
+    display: block;
+    position: absolute;
+    top: 9px;
+    left: 317px;
+  }
+
+  .container .section .nav {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 42px;
+    right: 15px;
+    background-color: #c70039;
+    width: 70px;
+    height: 80px;
+    border-radius: 8px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    padding: 4px 0;
+    z-index: 999;
+    gap: 2px;
+  }
+
+  .container .section .nav.show {
+    display: flex;
+  }
+
+  .container .section .nav .nav-link {
+    width: 93%;
+    height: auto;
+    padding: 0;
+    font-size: 10px;
+    text-align: left;
+    background-color: #ffffff;
+    border-radius: 8px;
+  }
+
+  .container .section .nav .nav-link:hover {
+    border-bottom: none;
+    background-color: #f1f8fd;
+  }
+
+  .container .section .identity {
+    width: 130px;
+    height: 100px;
+    margin-top: 115px;
+    gap: 16px;
+  }
+
+  .container .section .identity .myname {
+    width: 130px;
+    height: 30px;
+    font-size: 20px;
+    line-height: 100%;
+  }
+  .container .section .identity .role {
+    width: 125px;
+    height: 21px;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 100%;
+  }
+  .container .section .identity .check-work {
+    width: 113px;
+    height: 33px;
+    padding: 6px 8px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 100%;
+  }
+  .container .section .empty {
+    width: 196px;
+    height: 224px;
+    margin-top: 131px;
+    margin-left: -16px;
+    border-width: 2px 0 2px 2px;
+  }
+  .container .section .full {
+    width: 107.5px;
+    height: 213px;
+    margin-top: 24px;
+    margin-left: 88.67px;
+  }
+
+  /** Portfolio Section Small Screens **/
+
+  .container #Work {
+    flex-flow: column wrap;
+    margin-top: -228px;
+  }
+  .container .section .work-header {
+    width: 164px;
+    height: 80px;
+    background-color: transparent;
+    justify-content: flex-start;
+    margin-left: 22px;
+  }
+
+  .container .section .work-header h1 {
+    font-size: 24px;
+    line-height: 100%;
+    margin-left: 6px;
+  }
+
+  .container .section .work-studio {
+    margin-top: 0;
+    margin-left: 22px;
+    width: 316px;
+    gap: 16px;
+    flex-flow: column wrap;
+  }
+
+  .container .section .work-studio .work-item {
+    width: 316px;
+    height: 272px;
+  }
+
+  .container .section .work-studio .work-img {
+    width: 316px;
+    height: 212px;
+  }
+
+  .container .section .work-studio .work-item .work-item-name {
+    width: 316px;
+    height: 60px;
+    gap: 10px;
+    font-size: 18px;
+    line-height: 100%;
+  }
+
+  .back a {
+    font-size: 20px;
+    line-height: 100%;
+  }
+
+  /** Skills Section Small Screens **/
+
+  #Skills {
+    margin-top: 72px;
+    flex-flow: column wrap;
+  }
+  .section .skills-header {
+    width: 58px;
+    height: 36px;
+    margin-left: 36px;
+  }
+
+  .section .skills-header h1 {
+    font-size: 24px;
+    line-height: 100%;
+  }
+  .section .skills-container {
+    width: 360px;
+    min-height: 416px;
+    gap: 59px;
+    box-sizing: border-box;
+    padding: 20px;
+  }
+  .section .skills-container .skill-img {
+    width: 80px;
+    height: 80px;
+  }
+
+  /** About Small Screens Adjustments **/
+
+  #About {
+    margin-top: 72px;
+    flex-flow: column wrap;
+  }
+  .container .section .left {
+    height: 626px;
+  }
+  .container .section .right {
+    margin-top: -590px;
+    flex-flow: column wrap;
+  }
+  .container .section .left .about-header {
+    width: 105px;
+    height: 36px;
+    background-color: transparent;
+    margin: 0 0 0 36px;
+  }
+  .container .section .left .about-header h1 {
+    margin: 0;
+    font-size: 24px;
+    line-height: 100%;
+  }
+  .container .section .left .border-rectangle {
+    width: 360px;
+    height: 0;
+    margin-top: 507px;
+    margin-left: 0;
+    border-left: 0;
+  }
+  .container .section .right .about-img {
+    width: 360px;
+    height: 213px;
+    margin: 0;
+  }
+  .container .section .right .vague-rectangle {
+    margin-top: -42px;
+    margin-left: 20px;
+    width: 320px;
+    height: 320px;
+  }
+  .container .section .right .vague-rectangle .text {
+    font-size: 16px;
+    line-height: 100%;
+    padding: 16px;
+  }
+
+  /** Footer Section Small Screens **/
+
+  .container .footer {
+    margin-top: 72px;
+    width: 360px;
+    gap: 24px;
+  }
+  .container .footer .mystatus {
+    width: 165px;
+    height: 48px;
+    gap: 8px;
+  }
+  .container .footer .Slogo {
+    width: 32px;
+    height: 32px;
+    font-size: 20px;
+  }
+  .container .footer .info .myname {
+    font-size: 18px;
+    line-height: 100%;
+  }
+  .container .footer .info .role {
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 100%;
+  }
+  .container .footer .contact-info {
+    min-height: 508px;
+    box-sizing: border-box;
+    padding: 22px 40px;
+    gap: 0;
+  }
+  .container .footer .contact-info .intro {
+    font-size: 36px;
+    line-height: 100%;
+    margin-top: 0;
+  }
+  .container .footer .contact-info .details {
+    width: 100%;
+    height: fit-content;
+    flex-flow: column wrap;
+    justify-content: center;
+    margin-top: 40px;
+    gap: 40px;
+  }
+  .container .footer .contact-info .details .detail-item {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 100%;
+    gap: 8px;
+  }
+  .container .footer .contact-info .details .detail-item .SVG {
+    width: 30px;
+    height: 30px;
   }
 }
