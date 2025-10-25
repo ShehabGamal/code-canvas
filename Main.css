@@ -425,7 +425,7 @@ body {
   font-family: "Kanit", sans-serif;
   font-size: 20px;
   font-weight: 400;
-  line-height: 23px;
+  line-height: 26px;
   text-align: left;
   color: #2a2a2a;
   box-sizing: border-box;
@@ -804,7 +804,7 @@ body {
   }
   .container .section .right .vague-rectangle .text {
     font-size: 16px;
-    line-height: 100%;
+    line-height: 129%;
     padding: 16px;
   }
 
