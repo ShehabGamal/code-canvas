@@ -373,17 +373,17 @@ body {
 }
 .container .section .left .about-header {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-start;
+  align-items: flex-start;
   width: 523px;
   height: 304px;
   background-color: #f6c667;
 }
 .container .section .left .about-header h1 {
   display: flex;
-  margin-top: 85px;
-  margin-left: 135px;
   font-family: "Kanit", sans-serif;
+  margin-left: 130px;
+  margin-top: 85px;
   font-size: 36px;
   font-weight: 500;
   line-height: 48px;
@@ -418,19 +418,23 @@ body {
   z-index: 3;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
+  box-sizing: border-box;
 }
 .container .section .right .vague-rectangle .text {
   font-family: "Kanit", sans-serif;
   font-size: 20px;
   font-weight: 400;
-  line-height: 32px;
+  line-height: 23px;
   text-align: left;
   color: #2a2a2a;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  box-sizing: border-box;
   padding: 56px 72px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column; 
+  height: 100%;
 }
 
 /****Contact me Section***/
