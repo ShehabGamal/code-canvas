@@ -512,6 +512,7 @@ body {
   background-color: #f6c667;
   display: flex;
   flex-flow: row wrap;
+  justify-content: center;
 }
 .container .footer .contact-info .details .detail-item {
   font-family: "Kanit", sans-serif;
