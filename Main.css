@@ -14,8 +14,8 @@
   --border-color: #f6c667;
   --shadow-color: rgba(0, 0, 0, 0.2);
 
-  --theme-transition: background-color 0.4s ease, color 0.4s ease,
-    border-color 0.4s ease;
+  --theme-transition:
+    background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease;
 }
 
 [data-theme="dark"] {
@@ -33,7 +33,7 @@
   --border-color: #f6c667;
   --shadow-color: rgba(246, 198, 103, 0.15);
 }
-html{
+html {
   scrollbar-width: thin;
   scrollbar-color: var(--brand-primary) var(--bg-primary);
   transition: var(--theme-transition);
@@ -55,7 +55,7 @@ html{
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background-color: var(--bg-accent); 
+  background-color: var(--bg-accent);
 }
 html,
 body {
@@ -78,7 +78,8 @@ body {
   background-color: var(--bg-primary);
   transition: var(--theme-transition);
   animation: fadeIn 1s ease-in-out;
-  width: 1440px;
+  width: 100%;
+  max-width: 1440px;
   margin: 0 auto;
 }
 .container .section {
@@ -162,6 +163,9 @@ body {
   cursor: pointer;
   padding: 5.5px;
   z-index: 1000;
+  position: absolute;
+  top: 9px;
+  right: 15px;
 }
 
 .hamburger-btn .line {
@@ -273,8 +277,11 @@ body {
   line-height: 1.33;
   background-color: var(--brand-primary);
   transition: var(--theme-transition);
-  transition: background-color 0.3s ease, color 0.3s ease,
-    transform 0.2s ease-out, box-shadow 0.3s ease;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease,
+    transform 0.2s ease-out,
+    box-shadow 0.3s ease;
 }
 .container .section .identity .check-work a {
   text-decoration: none;
@@ -392,6 +399,7 @@ body {
 .container .section .work-studio .work-img {
   width: 372px;
   height: 280px;
+  object-fit: cover;
 }
 
 .container .section .work-studio .work-item .work-item-name {
@@ -517,6 +525,7 @@ body {
   margin-top: 61px;
   margin-left: -113px;
   z-index: 2;
+  object-fit: cover;
 }
 
 .container .section .right .vague-rectangle {
@@ -674,7 +683,9 @@ body {
 .reveal-on-scroll {
   opacity: 0;
   transform: translateY(30px);
-  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  transition:
+    opacity 0.8s ease-out,
+    transform 0.8s ease-out;
   will-change: opacity, transform;
 }
 
@@ -683,8 +694,391 @@ body {
   transform: translateY(0);
 }
 
+@media (max-width: 1200px) and (min-width: 481px) {
+  .container .section {
+    justify-content: center;
+  }
+
+  /* ---------- Top bar & Hero ---------- */
+
+  #Home {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 48px;
+    padding: 112px 48px 72px;
+    box-sizing: border-box;
+    width: 100%;
+  }
+
+  /* logo, pinned top-left as a fixed brand mark */
+  .container .section .left-quarter {
+    position: static;
+    height: auto;
+    width: auto;
+  }
+  .container .section .left-quarter .Slogo {
+    position: absolute;
+    top: 24px;
+    left: 32px;
+    align-self: auto;
+    margin: 0;
+    width: 48px;
+    height: 48px;
+    font-size: 28px;
+  }
+  .container .section .left-quarter .small {
+    display: none;
+  }
+
+  .container .section .left-half {
+    width: auto;
+  }
+
+  /* hero photo composition, scaled down proportionally */
+  .container .section .big {
+    width: 264px;
+    height: 376px;
+  }
+  .container .section .elipse {
+    width: 185px;
+    height: 185px;
+    margin-top: 58px;
+    margin-left: 45px;
+  }
+  .container .section .my-img {
+    width: 215px;
+    height: 307px;
+    margin-top: 11px;
+    margin-left: -11px;
+  }
+
+  /* hamburger, pinned top-right */
+  .hamburger-btn {
+    display: block;
+    position: fixed;
+    top: 15.5px;
+    right: 32px;
+  }
+
+  /* dropdown nav: expands from the hamburger side leftward until it
+     stops just short of the S logo never covers it with a
+     rounded leading edge and a brand-color "rush" once it lands */
+  .container .section .right-half {
+    margin: 0;
+    width: auto;
+  }
+  .container .section .nav {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 0;
+    max-width: calc(100% - 112px);
+    height: auto;
+    overflow: hidden;
+    white-space: nowrap;
+    background-color: var(--bg-secondary);
+    border-bottom: 1px solid var(--border-color);
+    border-radius: 0 0 0 28px;
+    box-shadow: 0 4px 12px var(--shadow-color);
+    transition:
+      width 0.55s cubic-bezier(0.65, 0, 0.35, 1),
+      box-shadow 0.4s ease,
+      var(--theme-transition);
+    padding: 16px 76px 16px 32px;
+    box-sizing: border-box;
+    gap: 8px 28px;
+    z-index: 999;
+    pointer-events: none;
+  }
+  .container .section .nav::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 56px;
+    background: linear-gradient(
+      90deg,
+      var(--brand-primary),
+      var(--bg-accent) 60%,
+      transparent
+    );
+    opacity: 0;
+    pointer-events: none;
+    border-radius: 0 0 0 28px;
+  }
+  .container .section .nav.show {
+    width: calc(100% - 112px);
+    pointer-events: auto;
+  }
+  .container .section .nav.show::before {
+    animation: navColorRush 0.7s ease-out 0.4s;
+  }
+  .container .section .nav .nav-link {
+    width: auto;
+    height: auto;
+    padding: 6px 4px;
+    font-size: 16px;
+    flex: 0 0 auto;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  .container .section .nav.show .nav-link {
+    opacity: 1;
+    transition-delay: 0.35s;
+  }
+  .container .section .nav .theme-toggle {
+    flex: 0 0 auto;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  .container .section .nav.show .theme-toggle {
+    opacity: 1;
+    transition-delay: 0.35s;
+  }
+
+  @keyframes navColorRush {
+    0% {
+      opacity: 0;
+      transform: translateX(24px) scaleX(0.5);
+    }
+    45% {
+      opacity: 1;
+      transform: translateX(0) scaleX(1.1);
+    }
+    100% {
+      opacity: 0;
+      transform: translateX(0) scaleX(1);
+    }
+  }
+
+  /* identity block, right column of the hero */
+  .container .section .identity {
+    width: auto;
+    max-width: 360px;
+    height: auto;
+    margin-top: 0;
+    gap: 20px;
+    align-items: flex-start;
+    text-align: left;
+  }
+  .container .section .identity .myname {
+    width: auto;
+    height: auto;
+    font-size: 44px;
+    line-height: 1.15;
+  }
+  .container .section .identity .role {
+    width: auto;
+    height: auto;
+    font-size: 22px;
+  }
+  .container .section .identity .check-work {
+    width: auto;
+    padding: 12px 28px;
+    height: auto;
+  }
+  .container .section .empty,
+  .container .section .full {
+    display: none;
+  }
+
+  /* ---------- Shared section header treatment ---------- */
+
+  .container .section .work-header,
+  .section .skills-header,
+  .container .section .left .about-header {
+    width: 100%;
+    height: auto;
+    background-color: transparent;
+    justify-content: flex-start;
+    align-items: baseline;
+    padding: 0 48px;
+    margin: 0 0 32px;
+    box-sizing: border-box;
+    border-bottom: 3px solid var(--border-color);
+    transition: var(--theme-transition);
+  }
+  .container .section .work-header h1,
+  .section .skills-header h1,
+  .container .section .left .about-header h1 {
+    margin: 0 0 20px;
+    font-size: 32px;
+    line-height: 1.3;
+  }
+
+  /* ---------- Work ---------- */
+
+  .container #Work {
+    margin-top: 40px;
+    width: 100%;
+  }
+  .container .section .work-studio {
+    margin: 0;
+    width: 100%;
+    padding: 0 48px;
+    box-sizing: border-box;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 28px;
+  }
+  .container .section .work-studio .work-item {
+    width: calc(50% - 14px);
+    min-width: 280px;
+    max-width: 380px;
+    height: 300px;
+  }
+  .container .section .work-studio .work-item .front,
+  .container .section .work-studio .work-item .back {
+    border-radius: 8px;
+    overflow: hidden;
+    box-sizing: border-box;
+  }
+  .container .section .work-studio .work-img {
+    display: block;
+    width: 100%;
+    height: 68%;
+  }
+  .container .section .work-studio .work-item .work-item-name {
+    width: 100%;
+    height: 32%;
+    box-sizing: border-box;
+    padding: 0 16px;
+    font-size: 18px;
+    line-height: 1.3;
+    text-align: center;
+  }
+
+  /* ---------- Skills ---------- */
+
+  #Skills {
+    margin-top: 88px;
+    width: 100%;
+  }
+  .section .skills-container {
+    width: calc(100% - 96px);
+    margin: 0 48px;
+    height: auto;
+    padding: 32px;
+    box-sizing: border-box;
+    justify-content: center;
+    border-radius: 12px;
+    gap: 32px;
+  }
+  .section .skills-container .skill-img {
+    width: 96px;
+    height: 96px;
+    background-color: var(--bg-secondary);
+    padding: 12px;
+    box-sizing: border-box;
+    box-shadow: 0 2px 6px var(--shadow-color);
+  }
+
+  /* ---------- About ---------- */
+
+  #About {
+    margin-top: 88px;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    padding: 0 48px;
+    box-sizing: border-box;
+  }
+  .container .section .left {
+    width: 100%;
+    height: auto;
+  }
+  .container .section .left .about-header {
+    padding: 0;
+  }
+  .container .section .left .border-rectangle {
+    display: none;
+  }
+  .container .section .right {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 32px;
+  }
+  .container .section .right .about-img {
+    position: static;
+    width: 320px;
+    height: 320px;
+    margin: 0;
+    border-radius: 12px;
+    object-fit: cover;
+    flex: 0 0 auto;
+  }
+  .container .section .right .vague-rectangle {
+    position: static;
+    margin: 0;
+    width: 320px;
+    height: auto;
+    border-radius: 12px;
+    flex: 1 1 320px;
+  }
+  .container .section .right .vague-rectangle .text {
+    height: auto;
+    padding: 28px;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  /* ---------- Footer ---------- */
+
+  .container .footer {
+    margin-top: 88px;
+    width: 100%;
+  }
+  .container .footer .contact-info {
+    width: calc(100% - 96px);
+    margin: 0 48px;
+    height: auto;
+    padding: 40px 32px;
+    box-sizing: border-box;
+    border-radius: 12px;
+  }
+  .container .footer .contact-info .details {
+    width: 100%;
+    height: auto;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    justify-items: center;
+    align-items: start;
+    gap: 32px 24px;
+  }
+  .container .footer .contact-info .details .detail-item {
+    width: 100%;
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 860px) and (min-width: 481px) {
+  /* narrower tablets: 4-across gets cramped, drop to a clean 2x2 grid */
+  .container .footer .contact-info .details {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 32px 20px;
+  }
+}
+
 @media (max-width: 480px) {
   /*Home Section  SmallScreens*/
+
+  #Home {
+    justify-content: center;
+  }
 
   .container .section .right-half {
     margin-left: 18px;
@@ -735,50 +1129,128 @@ body {
   }
   .container .section .hamburger-btn {
     display: block;
-    position: absolute;
-    top: 9px;
-    left: 317px;
+    position: fixed;
+    top: 14px;
+    right: 15px;
+    width: 32px;
+    height: 32px;
+    z-index: 1001;
+  }
+  .hamburger-btn .line {
+    transition:
+      transform 0.35s ease,
+      opacity 0.25s ease,
+      background-color 0.3s;
+  }
+  .hamburger-btn[aria-expanded="true"] .line:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+  .hamburger-btn[aria-expanded="true"] .line:nth-child(2) {
+    opacity: 0;
+    transform: scaleX(0);
+  }
+  .hamburger-btn[aria-expanded="true"] .line:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+  [data-theme="dark"] .theme-toggle:hover {
+    background-color: var(--bg-primary);
+  }
+  [data-theme="dark"] .theme-toggle:hover .icon {
+    color: var(--brand-primary);
+  }
+  [data-theme="light"] .theme-toggle:hover {
+    background-color: var(--bg-primary);
+  }
+  [data-theme="light"] .theme-toggle:hover .icon {
+    color: var(--brand-primary);
   }
 
+  /* full-screen menu that unrolls from the hamburger button itself,
+     rather than a cramped dropdown box */
   .container .section .nav {
-    display: none;
+    display: flex;
     flex-direction: column;
-    position: absolute;
-    top: 42px;
-    right: 15px;
-    background-color: var(--brand-primary);
-    transition: var(--theme-transition);
-    width: 70px;
-    height: 100px;
-    border-radius: 8px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
-    padding: 4px 0;
-    z-index: 999;
-    gap: 2px;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: var(--bg-primary);
+    background-image: radial-gradient(
+      circle at calc(100% - 31px) 30px,
+      var(--bg-accent) 0%,
+      transparent 45%
+    );
+    transition:
+      clip-path 0.6s cubic-bezier(0.65, 0, 0.35, 1),
+      var(--theme-transition);
+    padding: 0;
+    gap: 22px;
+    z-index: 1000;
+    clip-path: circle(0px at calc(100% - 31px) 30px);
+    pointer-events: none;
   }
 
   .container .section .nav.show {
-    display: flex;
+    clip-path: circle(150% at calc(100% - 31px) 30px);
+    pointer-events: auto;
   }
 
   .container .section .nav .nav-link {
-    width: 93%;
+    width: auto;
     height: auto;
-    padding: 0;
-    font-size: 10px;
-    text-align: left;
-    background-color: var(--bg-secondary);
-    border-radius: 8px;
+    padding: 8px 0;
+    font-size: 24px;
+    text-align: center;
+    background-color: transparent;
+    border-radius: 0;
+    opacity: 0;
+    transform: translateY(14px);
+    transition:
+      opacity 0.35s ease,
+      transform 0.35s ease;
+  }
+  .container .section .nav.show .nav-link {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .container .section .nav.show .nav-link:nth-child(1) {
+    transition-delay: 0.15s;
+  }
+  .container .section .nav.show .nav-link:nth-child(2) {
+    transition-delay: 0.2s;
+  }
+  .container .section .nav.show .nav-link:nth-child(3) {
+    transition-delay: 0.25s;
+  }
+  .container .section .nav.show .nav-link:nth-child(4) {
+    transition-delay: 0.3s;
+  }
+  .container .section .nav.show .nav-link:nth-child(5) {
+    transition-delay: 0.35s;
   }
 
   .container .section .nav .nav-link:hover {
-    border-bottom: none;
-    background-color: var(--bg-primary);
-    transition: var(--theme-transition);
+    border-bottom: 2px solid var(--brand-primary);
+  }
+
+  .container .section .nav .theme-toggle {
+    margin-top: 12px;
+    opacity: 0;
+    transform: translateY(14px);
+    transition:
+      opacity 0.35s ease,
+      transform 0.35s ease;
+  }
+  .container .section .nav.show .theme-toggle {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.4s;
   }
   .theme-toggle {
-    width: 15px;
-    height: 15px;
+    width: 48px;
+    height: 48px;
   }
   .container .section .identity {
     width: 130px;
@@ -833,7 +1305,8 @@ body {
     height: 80px;
     background-color: transparent;
     justify-content: flex-start;
-    margin-left: 22px;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .container .section .work-header h1 {
@@ -843,8 +1316,7 @@ body {
   }
 
   .container .section .work-studio {
-    margin-top: 0;
-    margin-left: 22px;
+    margin: 0 auto;
     width: 316px;
     gap: 16px;
     flex-flow: column wrap;
@@ -882,7 +1354,8 @@ body {
   .section .skills-header {
     width: 58px;
     height: 36px;
-    margin-left: 36px;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .section .skills-header h1 {
@@ -895,6 +1368,7 @@ body {
     gap: 59px;
     box-sizing: border-box;
     padding: 20px;
+    margin: 0 auto;
   }
   .section .skills-container .skill-img {
     width: 80px;
@@ -908,9 +1382,11 @@ body {
     flex-flow: column wrap;
   }
   .container .section .left {
+    width: 100%;
     height: 626px;
   }
   .container .section .right {
+    width: 100%;
     margin-top: -590px;
     flex-flow: column wrap;
   }
@@ -918,7 +1394,7 @@ body {
     width: 105px;
     height: 36px;
     background-color: transparent;
-    margin: 0 0 0 36px;
+    margin: 0 auto;
   }
   .container .section .left .about-header h1 {
     margin: 0;
@@ -928,18 +1404,16 @@ body {
   .container .section .left .border-rectangle {
     width: 360px;
     height: 0;
-    margin-top: 507px;
-    margin-left: 0;
+    margin: 507px auto 0;
     border-left: 0;
   }
   .container .section .right .about-img {
     width: 360px;
     height: 213px;
-    margin: 0;
+    margin: 0 auto;
   }
   .container .section .right .vague-rectangle {
-    margin-top: -42px;
-    margin-left: 20px;
+    margin: -42px auto 0;
     width: 320px;
     height: 320px;
   }
@@ -952,7 +1426,7 @@ body {
   /** Footer Section Small Screens **/
 
   .container .footer {
-    margin-top: 72px;
+    margin: 72px auto 0;
     width: 360px;
     gap: 24px;
   }
@@ -1003,5 +1477,220 @@ body {
   .container .footer .contact-info .details .detail-item .SVG {
     width: 30px;
     height: 30px;
+  }
+}
+@media (max-width: 359px) {
+  /* ============================================================
+     ULTRA-NARROW SCREENS (roughly 280-359px): Galaxy Z Fold cover
+     display and similar. Rather than patch the ~375px phone
+     layout to not overflow, this is a fresh, single-column,
+     centered "profile card" composition purpose-built for very
+     tight width simplified hero, circular portrait, centered
+     headings throughout. The nav/hamburger are intentionally left
+     completely alone: same full-screen circular-reveal menu as
+     standard mobile.
+     ============================================================ */
+
+  #Home {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding-top: 88px;
+    padding-bottom: 48px;
+    box-sizing: border-box;
+  }
+
+  .container .section .left-half {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 0 24px;
+    box-sizing: border-box;
+  }
+  .container .section .left-quarter {
+    width: 100%;
+    height: auto;
+    flex-flow: row wrap;
+    justify-content: center;
+  }
+  .container .section .Slogo {
+    margin: 0 0 20px;
+  }
+  .container .section .small {
+    display: none;
+  }
+
+  /* the layered box/ellipse/photo composition becomes one clean
+     circular portrait reads better at this width than a scaled
+     down version of the desktop's offset shapes */
+  .container .section .big {
+    width: 148px;
+    height: 148px;
+    border-radius: 50%;
+    background: var(--text-on-brand);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 6px 18px var(--shadow-color);
+  }
+  .container .section .elipse {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+  }
+  .container .section .my-img {
+    width: 180px;
+    height: 225px;
+    margin: 0;
+    /*object-fit: cover;*/
+    border-radius: 50%;
+    top: 30px;
+    position: absolute;
+  }
+
+  .container .section .right-half {
+    width: 100%;
+    margin: 24px 0 0;
+    padding: 0 24px;
+    box-sizing: border-box;
+  }
+  .container .section .identity {
+    width: 100%;
+    height: auto;
+    align-items: center;
+    text-align: center;
+    margin-top: 0;
+    gap: 10px;
+  }
+  .container .section .identity .myname {
+    width: 100%;
+    height: auto;
+    font-size: 24px;
+    line-height: 1.2;
+  }
+  .container .section .identity .role {
+    width: 100%;
+    height: auto;
+    font-size: 14px;
+  }
+  .container .section .identity .check-work {
+    margin: 6px auto 0;
+  }
+  .container .section .empty,
+  .container .section .full {
+    display: none;
+  }
+
+  /* shared header treatment across sections: centered heading with
+     an accent underline instead of the desktop's color-block header */
+  .container .section .work-header,
+  .section .skills-header,
+  .container .section .left .about-header {
+    width: 100%;
+    height: auto;
+    background-color: transparent;
+    justify-content: center;
+    padding: 0 24px;
+    margin: 0 0 20px;
+    box-sizing: border-box;
+    border-bottom: 3px solid var(--border-color);
+  }
+  .container .section .work-header h1,
+  .section .skills-header h1,
+  .container .section .left .about-header h1 {
+    margin: 0 0 14px;
+    font-size: 22px;
+    line-height: 1.3;
+    text-align: center;
+  }
+
+  /* Work */
+  .container #Work {
+    margin-top: 32px;
+  }
+  .container .section .work-studio {
+    margin: 0 auto;
+    width: calc(100% - 48px);
+  }
+  .container .section .work-studio .work-item {
+    width: 100%;
+    height: 260px;
+  }
+  .container .section .work-studio .work-img,
+  .container .section .work-studio .work-item .work-item-name {
+    width: 100%;
+  }
+
+  /* Skills */
+  #Skills {
+    margin-top: 48px;
+  }
+  .section .skills-container {
+    width: calc(100% - 48px);
+    margin: 0 auto;
+    min-height: auto;
+    gap: 20px;
+    padding: 24px;
+  }
+  .section .skills-container .skill-img {
+    width: 56px;
+    height: 56px;
+  }
+
+  /* About: portrait echoes the hero's circular treatment */
+  #About {
+    margin-top: 48px;
+  }
+  .container .section .left .border-rectangle {
+    display: none;
+  }
+  .container .section .right .about-img {
+    width: 148px;
+    height: 148px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto;
+  }
+  .container .section .right .vague-rectangle {
+    width: calc(100% - 48px);
+    height: auto;
+    margin: 20px auto 0;
+    border-radius: 12px;
+  }
+  .container .section .right .vague-rectangle .text {
+    padding: 18px;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  /* Footer */
+  .container .footer {
+    width: calc(100% - 32px);
+    margin: 48px auto 0;
+  }
+  .container .footer .mystatus {
+    width: 100%;
+    justify-content: center;
+  }
+  .container .footer .contact-info {
+    padding: 24px 16px;
+    box-sizing: border-box;
+  }
+  .container .footer .contact-info .intro {
+    font-size: 22px;
+    text-align: center;
+  }
+  .container .footer .contact-info .details {
+    align-items: center;
+  }
+  .container .footer .contact-info .details .detail-item {
+    justify-content: center;
   }
 }

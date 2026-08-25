@@ -1,8 +1,8 @@
-<!DOCTYPE html>
+<!doctype html>
 <head>
   <title>Shehab Gamal</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="Main.css" />
+  <link rel="stylesheet" href="Main1.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
@@ -59,7 +59,7 @@
             aria-label="Toggle light/dark theme"
           >
             <svg
-              class="icon sun"
+              class="icon moon"
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
@@ -78,7 +78,7 @@
               <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
             </svg>
             <svg
-              class="icon moon"
+              class="icon sun"
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
@@ -373,12 +373,23 @@
     document.addEventListener("DOMContentLoaded", () => {
       const hamburgerBtn = document.querySelector(".hamburger-btn");
       const navPanel = document.querySelector(".nav");
+      const navBtns = document.querySelectorAll(".nav-link");
 
       hamburgerBtn.addEventListener("click", () => {
         navPanel.classList.toggle("show");
 
         const isExpanded = navPanel.classList.contains("show");
         hamburgerBtn.setAttribute("aria-expanded", isExpanded);
+      });
+
+      navBtns.forEach((btn) => {
+        btn.addEventListener("click", () => {
+        navPanel.classList.toggle("show");
+
+        const isExpanded = navPanel.classList.contains("show");
+        hamburgerBtn.setAttribute("aria-expanded", isExpanded);
+      });
+     
       });
 
       const themeToggle = document.getElementById("theme-toggle");
@@ -403,11 +414,11 @@
         },
         {
           threshold: 0.1,
-        }
+        },
       );
 
       const elementsToReveal = document.querySelectorAll(
-        ".work-item, .skill-img, .vague-rectangle, .footer .mystatus, .footer .contact-info"
+        ".work-item, .skill-img, .vague-rectangle, .footer .mystatus, .footer .contact-info",
       );
 
       elementsToReveal.forEach((el) => {
