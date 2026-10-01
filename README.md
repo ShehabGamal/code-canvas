@@ -25,7 +25,7 @@ CodeCanvas is a responsive portfolio website designed to showcase my frontend de
 - Animated transitions between sections
 - Interactive project cards with hover effects
 - Form validation for the contact section
-- Dark/light mode toggle (if implemented)
+- Dark/light mode toggle
 
 ## Technologies Used
 
